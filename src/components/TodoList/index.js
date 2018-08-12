@@ -2,10 +2,10 @@ import React from 'react';
 import TodoItem, { TodoHeader } from './TodoItem';
 
 const dummyTodos = [
-  { title: 'aaaa', done: true, created_at: '2017-08-08 12:00:00' },
-  { title: 'aaaa', done: true, created_at: '2017-08-08 12:00:00' },
-  { title: 'aaaa', done: true, created_at: '2017-08-08 12:00:00' },
-  { title: 'aaaa', done: true, created_at: '2017-08-08 12:00:00' },
+  { id: 1, title: 'aaaa', done: true, created_at: '2017-08-08 12:00:00' },
+  { id: 2, title: 'aaaa', done: true, created_at: '2017-08-08 12:00:00' },
+  { id: 3, title: 'aaaa', done: true, created_at: '2017-08-08 12:00:00' },
+  { id: 4, title: 'aaaa', done: true, created_at: '2017-08-08 12:00:00' },
 ];
 
 const styles = {
@@ -19,6 +19,6 @@ const styles = {
 export default ({ todos = dummyTodos }) => (
   <div style={styles.list}>
     <TodoHeader />
-    {todos.map(todo => <TodoItem {...todo} />)}
+    {todos.map(todo => <TodoItem key={todo.id} {...todo} />)}
   </div>
 );
